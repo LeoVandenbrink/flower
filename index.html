@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оранжерея — цветочная мастерская</title>
+<meta name="description" content="Оранжерея — живые цветы из собственной теплицы. Букеты ручной сборки с доставкой за 90 минут.">
+<meta name="theme-color" content="#17231A">
+
+<!--
+  КАК ВСТАВИТЬ СВОИ ФОТО
+  1) Крупные фото (шапка, о нас, карта) — это div с классом "photo".
+     У него в HTML есть style="background-image:url('...')" — просто впишите
+     туда путь к своей картинке, старый узор-заглушка исчезнет сам.
+     После этого можно удалить атрибут data-label у этого же div.
+  2) Фото букетов в каталоге и в отзывах — обычные теги <img>.
+     Просто замените src="..." на путь к своему файлу и поправьте alt.
+-->
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a href="#hero" class="logo">Оранжерея</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#catalog">Каталог</a>
+      <a href="#about">О нас</a>
+      <a href="#process">Доставка</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#order">Контакты</a>
+    </nav>
+    <div class="header-right">
+      <a href="tel:+996700000000" class="header-phone">+996 700 000 000</a>
+      <a href="#order" class="btn btn--outline">Заказать</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </div>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero__inner">
+      <div class="hero__text">
+        <span class="hero__badge">Семейная теплица, работаем с 2014 года</span>
+        <h1>Цветы, которые ещё пахнут теплицей</h1>
+        <p class="hero__lead">Срезаем каждый стебель утром в день заказа и собираем букет вручную. Без складов и без «вчерашней» свежести — только то, что сегодня распустилось.</p>
+        <div class="hero__actions">
+          <a href="#catalog" class="btn btn--primary">Смотреть каталог</a>
+          <a href="#process" class="btn--text">Как мы работаем</a>
+        </div>
+      </div>
+      <!-- ФОТО: крупный кадр витрины или букета крупным планом, вертикальное, от 1200×1600 -->
+      <div class="hero__photo photo" style="background-image:url('img/ad_4nxertc1amzdr12xc1k0v0akvnrten0aarr1tjfgmleox_28i5rrhht9h62ajixdxd-1ix1slbrjd8o-jifcqmsamt02pphfxpxgwwxyf9gwzljsafsjjz2ixvxfkaxsgcl95jrx74a\ \(1\).jpg')" ></div>
+    </div>
+  </section>
+
+  <section class="philosophy" id="about">
+    <div class="wrap">
+      <!-- ФОТО: интерьер теплицы или мастерской флориста, горизонтальное -->
+      <div class="philosophy__photo photo" style="background-image:url(img/24.jpg)" ></div>
+      <div class="philosophy__content">
+        <h2>Прямо с грядки, а не со склада</h2>
+        <p>У большинства цветочных «свежий букет» означает цветы, которые несколько дней ехали через оптовую базу. У нас — своя теплица за городом: срезаем то, что нужно, в день заказа, и везём сразу к вам. Никакой химии для «долгой жизни» — только вода и внимание флориста.</p>
+        <div class="stats">
+          <div class="stat"><strong>40+</strong><span>сортов в этом сезоне</span></div>
+          <div class="stat"><strong>6</strong><span>флористов в команде</span></div>
+          <div class="stat"><strong>90 мин</strong><span>среднее время доставки</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog" id="catalog">
+    <div class="wrap">
+      <div class="catalog__head">
+        <div>
+          <h2>Букеты этой недели</h2>
+          <p>Состав меняется каждую неделю — в зависимости от того, что сейчас цветёт в теплице</p>
+        </div>
+        <div class="catalog__filters" id="catalogFilters">
+          <button class="filter-btn is-active" data-filter="all">Все</button>
+          <button class="filter-btn" data-filter="mono">Монобукеты</button>
+          <button class="filter-btn" data-filter="mix">Композиции</button>
+          <button class="filter-btn" data-filter="wedding">Свадебные</button>
+        </div>
+      </div>
+
+      <div class="catalog__grid" id="catalogGrid">
+
+        <article class="card" data-category="mix">
+          <div class="card__photo">
+            <span class="card__number">№ 01</span>
+            <!-- ФОТО: букет «Пионовая рапсодия» -->
+            <img class="photo-img" src="img/images (3) (1).jpg" alt="Букет «Пионовая рапсодия»: пионы и эвкалипт" loading="lazy" decoding="async">
+          </div>
+          <div class="card__body">
+            <h3>Пионовая рапсодия</h3>
+            <p>12 пионов, эвкалипт, лента из хлопка</p>
+            <div class="card__row">
+              <span class="card__price">8 900 сом</span>
+              <a href="#order" class="card__order">Заказать</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="mono">
+          <div class="card__photo">
+            <span class="card__number">№ 02</span>
+            <!-- ФОТО: букет «Утренний туман» -->
+            <img class="photo-img" src="img/75-белых-в-коробке.jpg" alt="Букет «Утренний туман»: белые розы и гипсофила" loading="lazy" decoding="async">
+          </div>
+          <div class="card__body">
+            <h3>Утренний туман</h3>
+            <p>Белые розы, маттиола, гипсофила</p>
+            <div class="card__row">
+              <span class="card__price">6 200 сом</span>
+              <a href="#order" class="card__order">Заказать</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="mix">
+          <div class="card__photo">
+            <span class="card__number">№ 03</span>
+            <!-- ФОТО: букет «Полевой сбор» -->
+            <img class="photo-img" src="img/134_original.jpeg" alt="Букет «Полевой сбор»: ромашка, васильки, злаки" loading="lazy" decoding="async">
+          </div>
+          <div class="card__body">
+            <h3>Полевой сбор</h3>
+            <p>Ромашка, васильки, злаковые колосья</p>
+            <div class="card__row">
+              <span class="card__price">4 500 сом</span>
+              <a href="#order" class="card__order">Заказать</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="wedding">
+          <div class="card__photo">
+            <span class="card__number">№ 04</span>
+            <!-- ФОТО: букет «Тёмный бархат» -->
+            <img class="photo-img" src="img/images (4).jpg" alt="Букет «Тёмный бархат»: бордовые розы и скабиоза" loading="lazy" decoding="async">
+          </div>
+          <div class="card__body">
+            <h3>Тёмный бархат</h3>
+            <p>Бордовые розы, скабиоза, эвкалипт</p>
+            <div class="card__row">
+              <span class="card__price">7 800 сом</span>
+              <a href="#order" class="card__order">Заказать</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="mix">
+          <div class="card__photo">
+            <span class="card__number">№ 05</span>
+            <!-- ФОТО: букет «Цитрусовый закат» -->
+            <img class="photo-img" src="img/ranunkulusy.jpeg" alt="Букет «Цитрусовый закат»: ранункулюсы и ирисы" loading="lazy" decoding="async">
+          </div>
+          <div class="card__body">
+            <h3>Цитрусовый закат</h3>
+            <p>Ранункулюсы, ирисы, зелень</p>
+            <div class="card__row">
+              <span class="card__price">6 900 сом</span>
+              <a href="#order" class="card__order">Заказать</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="mono">
+          <div class="card__photo">
+            <span class="card__number">№ 06</span>
+            <!-- ФОТО: букет «Просто пионы» -->
+            <img class="photo-img" src="img/images (5).jpg" alt="Монобукет «Просто пионы»" loading="lazy" decoding="async">
+          </div>
+          <div class="card__body">
+            <h3>Просто пионы</h3>
+            <p>Монобукет из 15 пионов сезонных оттенков</p>
+            <div class="card__row">
+              <span class="card__price">9 500 сом</span>
+              <a href="#order" class="card__order">Заказать</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="wrap">
+      <h2>Как мы работаем</h2>
+      <div class="process__grid">
+        <div class="step">
+          <div class="step__number">01</div>
+          <h3>Вы выбираете</h3>
+          <p>Букет из каталога — или пишете нам в WhatsApp / Telegram, если хочется собрать что-то своё под настроение или бюджет.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">02</div>
+          <h3>Мы собираем</h3>
+          <p>Флорист срезает цветы и вручную собирает букет в течение часа — заворачивает в бумагу и хлопковый шпагат.</p>
+        </div>
+        <div class="step">
+          <div class="step__number">03</div>
+          <h3>Курьер везёт</h3>
+          <p>Доставка по городу — в среднем за 90 минут. Бесплатно при заказе от 5 000 сом.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="reviews">
+    <div class="wrap">
+      <h2>Отзывы</h2>
+      <div class="testimonials__grid">
+        <blockquote class="testimonial">
+          <!-- ФОТО: аватар клиента, круглый кроп -->
+          <div class="testimonial__avatar photo" style="background-image:url('')" data-label="Фото"></div>
+          <p>«Заказывала на день рождения мамы — привезли на двадцать минут раньше, букет даже лучше, чем на фото.»</p>
+          <cite>— Айгуль</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <div class="testimonial__avatar photo" style="background-image:url('')" data-label="Фото"></div>
+          <p>«Пионы простояли почти две недели — для меня это рекорд среди всех букетов, что я покупал.»</p>
+          <cite>— Данияр</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <div class="testimonial__avatar photo" style="background-image:url('')" data-label="Фото"></div>
+          <p>«Удобно, что можно написать в WhatsApp и собрать букет под настроение, а не выбирать из готового списка.»</p>
+          <cite>— Мадина</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order">
+    <div class="wrap">
+      <div class="order__form-wrap">
+        <h2>Собрать букет</h2>
+        <p>Оставьте контакты — перезвоним в течение часа, уточним детали и согласуем время доставки.</p>
+        <form id="orderForm">
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Имя</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="address">Адрес доставки</label>
+              <input type="text" id="address" name="address">
+            </div>
+            <div class="field">
+              <label for="datetime">Дата и время</label>
+              <input type="datetime-local" id="datetime" name="datetime">
+            </div>
+          </div>
+          <div class="field">
+            <label for="comment">Пожелания к букету</label>
+            <textarea id="comment" name="comment" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Отправить заказ</button>
+          <p class="form__note" id="formNote">Спасибо! Мы свяжемся с вами в течение часа.</p>
+        </form>
+      </div>
+
+      <div class="order__info">
+        <div class="info-block">
+          <h3>Телефон и мессенджеры</h3>
+          <p><a href="tel:+996700000000">+996 700 000 000</a></p>
+          <p><a href="#">WhatsApp</a> · <a href="#">Telegram</a></p>
+        </div>
+        <div class="info-block">
+          <h3>Часы работы</h3>
+          <p>Пн–Вс: 09:00–20:00</p>
+        </div>
+        <div class="info-block">
+          <h3>Шоурум</h3>
+          <p>г. Бишкек, ул. Киевская, 148</p>
+        </div>
+        <div class="order__map">
+          <iframe
+            src="https://www.google.com/maps?q=г.+Бишкек,+ул.+Киевская,+148&output=embed"
+            width="100%"
+            height="300"
+            style="border:0; border-radius:12px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="logo">Оранжерея</span>
+        <p>Живые цветы из собственной теплицы. Срезаем утром, везём в тот же день.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Каталог</h4>
+        <ul>
+          <li><a href="#catalog">Монобукеты</a></li>
+          <li><a href="#catalog">Композиции</a></li>
+          <li><a href="#catalog">Свадебные</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Информация</h4>
+        <ul>
+          <li><a href="#process">Доставка</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+996700000000">+996 700 000 000</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Telegram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Оранжерея. Все права защищены.</span>
+      <span>г. Бишкек</span>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
